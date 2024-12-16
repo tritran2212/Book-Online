@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Manager</title>
+
+    <!-- Setup font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Setup icon -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- 
+      MY CSS
+      - Để ở dưới cùng để có độ ưu tiên cao nhất
+    -->
+    <link rel="stylesheet" href="./css/index.css" />
+    <!-- link:css -->
+    <link rel="stylesheet" href="./css/header.css" />
+    <link rel="stylesheet" href="./css/hero.css" />
+    <link rel="stylesheet" href="./css/activities.css" />
+    <link rel="stylesheet" href="./css/stay.css" />
+    <link rel="stylesheet" href="./css/footer.css" />
+  </head>
+  <body>
+    <!-- ctrl + / -->
+    <!-- HEADER -->
+
+    <header>
+      <div class="container">
+        <a class="logo" href="/">
+          <i class="fa-solid fa-book"> BOOK ONLINE</i>
+        </a>
+
+        <!-- 
+        Đây là vùng để điều hướng trang web - di chuyển giữa các trang web
+      -->
+        <nav>
+          <!-- 
+          ul>li*6: 
+          - ul: thẻ cha
+          - li: thẻ con
+
+          ul>li*6>a: tạo 6 thẻ li bên trong thẻ ul và bên trong thẻ li có 1 thẻ a
+        -->
+
+          <ul>
+            <li>
+              <a href="#">Home</a>
+            </li>
+            <li>
+              <a href="#search-bar">Search</a>
+            </li>
+            <li>
+              <a href="#hero">Carousel</a>
+            </li>
+            <li>
+              <a href="#activities">Book</a>
+            </li>
+            <li>
+              <a href="#footer">More</a>
+            </li>
+            <li>
+              <a href="#contact">Contact us</a>
+            </li>
+            <li><li><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i> Giỏ hàng</a></li></a></li>
+            <li><a href="./login.html"><button>ĐĂNG XUẤT</button></a></li>
+
+          </ul>
+        </nav>
+      </div>
+    </header>
+    
+
+    <!-- HERO -->
+    <section id="hero">
+      <img src="./Image/nhung-cau-noi-hay-ve-sach-haruki-murakami-1024x576.jpg" alt="">
+    </section>
+
+    <!-- Activities -->
+    <section id="search-bar">
+      <div class="container">
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Tìm kiếm sách..."
+          oninput="filterBooks()"
+        />
+        <button id="search-btn" onclick="filterBooks()">Tìm kiếm</button>
+      </div>
+    </section>
+    
+    <!-- BEM -->
+    <section id="activities">
+      <div class="activities__header">
+        <img src="./Image/hinh-anh-dep-ve-sach-mo-ra_051500890.jpg" alt="">
+        <p>Explore Book & Activities</p>
+      </div>
+
+      <div class="activities__content">
+        <div class="card">
+          <div style="position: relative;">
+            <img  class="card__img"  src="./Image/p68720mbt_4e86a6baeee640e1a1bb1eea84b4570d_master.webp" alt="day la hinh anh 1">
+            <button class="btn-heart" style="position: absolute; top: 10px;right: 10px;">
+            <i class="fa-solid fa-heart"></i>
+           </button>
+          </div>
+          <p class="card__title">New Move Ahead</p>
+          <p class="card__desc"><b>"New Move Ahead"</b> là cuốn sách truyền cảm hứng, khuyến khích thay đổi và tiến về phía trước để đạt thành công.</p>
+          <p class="card__price">Price: 80$</p>
+         <button class="card__btn">
+          <a href="book-detail.html?title=New%20Move%20Ahead&price=80&image=./Image/p68720mbt_4e86a6baeee640e1a1bb1eea84b4570d_master.webp&desc=%22New%20Move%20Ahead%22%20l%C3%A0%20cu%E1%BB%91n%20s%C3%A1ch%20truy%E1%BB%81n%20c%E1%BA%A3m%20h%E1%BB%A9ng..." >
+            Read More
+          </a>
+         </button>
+          <div class="card__buy">
+            <!-- Thêm thông tin vào data attribute để truyền vào trang thanh toán -->
+            <a href="#" class="cart-icon" onclick="addToCart(event, 'New Move Ahead', 80, './Image/p68720mbt_4e86a6baeee640e1a1bb1eea84b4570d_master.webp')">
+              <i class="fa-solid fa-cart-shopping"></i>
+            </a>
+
+          <a href="checkout.html?book=New%20Move%20Ahead&price=80">
+            <button class="button__buy">Buy Now</button>
+        </a>
+        </div>
+         
+        </div>
+        <div class="card">
+          <div  style="position: relative;">
+            <img  class="card__img"  src="./Image/p59150mbia_truoc_4a74b457ee4a423daaf2d7b0f171ddba_master.jpg" alt="day la hinh anh 1">
+            <button class="btn-heart" style="position: absolute; top: 10px;right: 10px;">
+              <i class="fa-solid fa-heart"></i>
+             </button>
+          </div>
+
+          <p class="card__title">Cambridge English.</p>
+          <p class="card__desc"><b>"Cambridge English"</b> cung cấp tài liệu học tiếng Anh chất lượng, từ cơ bản đến nâng cao.</p>
+          <p class="card__price">Price: 70$</p>
+          <button class="card__btn">
+            <a href="book-detail.html?title=Cambridge%20English&price=70&image=./Image/p59150mbia_truoc_4a74b457ee4a423daaf2d7b0f171ddba_master.jpg&desc=%22Cambridge%20English%22%20l%C3%A0%20ngu%E1%BB%93n%20t%C3%A0i%20li%E1%BB%87u%20ti%E1%BA%BFng%20Anh%20ch%E1%BA%A5t%20l%C6%B0%E1%BB%A3ng..." >
+              Read More
+            </a>
+          </button>
+          <div class="card__buy">
+            <!-- Thêm thông tin vào data attribute để truyền vào trang thanh toán -->
+            <a href="#" class="cart-icon" onclick="addToCart(event, 'Cambridge English', 70, './Image/p59150mbia_truoc_4a74b457ee4a423daaf2d7b0f171ddba_master.jpg')">
+              <i class="fa-solid fa-cart-shopping"></i>
+            </a>
+
+            <a href="checkout.html?book=Vietnamese%20For%20Foreigners&price=70">
+                <button class="button__buy">Buy Now</button>
+            </a>
+        </div>
+        </div>
+        <div class="card">
+          <div class=""style="position: relative;">
+            <img  class="card__img"  src="./Image/p85181mscan0001_eb1e862256d240aab0d5497b852bcb0d_master.jpg" alt="day la hinh anh 1">
+            <button class="btn-heart" style="position: absolute; top: 10px;right: 10px;">
+              <i class="fa-solid fa-heart"></i>
+             </button>
+          </div>
+          <p class="card__title">Cẩm nang luyện thi</p>
+          <p class="card__desc"><b>"Cẩm nang luyện thi"</b> hướng dẫn và cung cấp chiến lược ôn thi hiệu quả.</p>
+          <p class="card__price">Price: 80$</p>
+          <button class="card__btn">
+            <a href="book-detail.html?title=C%E1%BA%A9m%20nang%20luy%E1%BB%87n%20thi&price=80&image=./Image/p85181mscan0001_eb1e862256d240aab0d5497b852bcb0d_master.jpg&desc=%22C%E1%BA%A9m%20nang%20luy%E1%BB%87n%20thi%22%20gi%C3%BAp%20b%E1%BA%A1n%20%C4%91%E1%BA%A1t%20hi%E1%BB%87u%20qu%E1%BA%A3%20cao..." >
+              Read More
+            </a>
+          </button>
+          <div class="card__buy">
+            <!-- Thêm thông tin vào data attribute để truyền vào trang thanh toán -->
+            <a href="#" class="cart-icon" onclick="addToCart(event, 'Cẩm nang luyện thi', 80, './Image/p85181mscan0001_eb1e862256d240aab0d5497b852bcb0d_master.jpg')">
+              <i class="fa-solid fa-cart-shopping"></i>
+            </a>
+
+            <a href="checkout.html?book=Vietnamese%20For%20Foreigners&price=40">
+                <button class="button__buy">Buy Now</button>
+            </a>
+        </div>
+        </div>
+        <div class="card">
+          <div class="card__img-container" style="position: relative;">
+              <img class="card__img" src="./Image/p90344mtieng_viet_3d78741ff62440b783bfe1a7215011db_master.jpg" alt="Vietnamese For Foreigners">
+              <button class="btn-heart" style="position: absolute; top: 10px; right: 20px;">
+                  <i class="fa-solid fa-heart"></i>
+              </button>
+          </div>
+          <p class="card__title">Vietnamese For Foreigners</p>
+          <p class="card__desc"><b>"Tiếng Việt Cho Người Nước Ngoài"</b> là sách học tiếng Việt dành cho người nước ngoài.</p>
+          <p class="card__price">Price: 40$</p>
+          <button class="card__btn">
+            <a href="book-detail.html?title=Vietnamese%20For%20Foreigners&price=40&image=./Image/p90344mtieng_viet_3d78741ff62440b783bfe1a7215011db_master.jpg&desc=%22Vietnamese%20For%20Foreigners%22%20l%C3%A0%20t%C3%A0i%20li%E1%BB%87u%20h%E1%BB%AFu%20%C3%ADch..." >
+              Read More
+            </a>
+          </button>
+          <div class="card__buy">
+              <!-- Thêm thông tin vào data attribute để truyền vào trang thanh toán -->
+              <a href="#" class="cart-icon" onclick="addToCart(event, 'Vietnamese For Foreigners', 40, './Image/p90344mtieng_viet_3d78741ff62440b783bfe1a7215011db_master.jpg')">
+                <i class="fa-solid fa-cart-shopping"></i>
+              </a>
+
+              <a href="checkout.html?book=Vietnamese%20For%20Foreigners&price=40">
+                  <button class="button__buy">Buy Now</button>
+              </a>
+          </div>
+      </div>
+      
+        
+      </div>
+           
+      <div class="view__all">
+        <button>view all</button>
+      </div>
+    </section>
+
+    <!-- Stay -->
+    <section id="contact">
+      <div class="contact__container">
+        <div class="contact__left">
+          <img src="./Image/p90345mngu_am_bbcee28330a24fb7bad3517177ee6dd2_master.jpg" alt="home">
+        </div>
+        <div class="contact__right">
+          <h2 ><b>"Open a Book, Open Your Mind."</b></h2>
+          <p><b>Mỗi cuốn sách là một cánh cửa mở ra thế giới mới, nơi ý tưởng và câu chuyện thắp sáng trí óc bạn. Hãy để sách dẫn lối, mở rộng tư duy và khám phá những điều kỳ diệu chưa từng biết.</b></p>
+          
+          <div class="contact__detail">           
+            <div class="contact__app">          
+              <h3>Download Our  App</h3>   
+              <img src="./Image/download-on-the-app-store-apple-1.png" alt="apple">
+              <img src="./Image/google-play-badge-1.png" alt="google">
+            </div>
+            <div class="contact__us">
+              <h3>Follow Us</h3>
+              <a href="https://www.facebook.com/tranvantri.2212?locale=vi_VN"><i class="fab fa-facebook-square"></i></a> 
+              <i class="fab fa-youtube"></i>
+              <i class="fab fa-instagram"></i>
+              <i class="fab fa-pinterest-square"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+      <div class="footer__content">
+          <div class="footer__about">
+            <h3>Books are your portal to infinite knowledge.</h3>
+            
+          <p><b>Mỗi cuốn sách là một hành trình, dẫn bạn qua thế giới của ý tưởng, câu chuyện và sự kỳ diệu. Hãy để những trang giấy đưa bạn khám phá, học hỏi và truyền cảm hứng mỗi ngày.</b></p>
+          </div>
+          <div class="footer__list">
+            <div class="footer__nav">
+              <h3>Discover with Us</h3>
+              <ul>
+                <li><a href="#">About Us </a></li>
+                <li><a href="#">Reading Benefits</a></li>
+                <li><a href="#">Inspiration Stories</a></li>
+                
+              </ul>
+            </div>
+            <div class="footer__nav">
+              <h3>Learn More </h3>
+              <ul>
+                <li><a href="#">How to Choose Books </a></li>
+                <li><a href="#">Popular Genres</a></li>
+                <li><a href="#">Book Club Activities</a></li>
+                
+              </ul>
+            </div>
+            <div class="footer__nav">
+              <h3>Explore More</h3>
+              <ul>
+                <li><a href="#">Author Highlights </a></li>
+                <li><a href="#">Book Reviews</a></li>
+                <li><a href="#">Writing Tips</a></li>
+                
+              </ul>
+            </div>
+          </div>
+      </div>
+     <div class="footer__copyright">
+      <p>© 2024. All rights reserved. Your journey begins with a book.</p>
+     </div>
+    </footer>
+    <script>
+      
+
+function filterBooks() {
+  const searchInput = document.getElementById('search-input').value.toLowerCase();
+  const bookCards = document.querySelectorAll('.card');
+  let found = false;
+
+  bookCards.forEach((card) => {
+    const bookTitle = card.querySelector('.card__title').innerText.toLowerCase();
+    if (bookTitle.includes(searchInput)) {
+      card.style.display = 'block'; // Hiển thị sách phù hợp
+      found = true;
+    } else {
+      card.style.display = 'none'; // Ẩn sách không phù hợp
+    }
+  });
+
+  // Thêm thông báo nếu không tìm thấy
+  if (!found) {
+    document.getElementById('book-container').innerHTML =
+      '<p style="text-align: center; color: red; font-size: 1.2rem;">Không tìm thấy sách phù hợp!</p>';
+  }
+}
+
+
+const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+function addToCart(event, title, price, image) {
+  event.preventDefault();
+  const book = { title, price, image };
+  cart.push(book);
+  localStorage.setItem('cart', JSON.stringify(cart));
+  alert(`Đã thêm "${title}" vào giỏ hàng!`);
+}
+    </script>
+    
+  </body>
+</html>

@@ -1,0 +1,172 @@
+#activities {
+    /* bgc */
+    background-color: #faf4f2;
+
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.activities__header {
+    text-align: center;
+}
+
+.activities__header p {
+    font-size: 30px;
+    color: #8d8d8d;
+}
+.activities__header img{
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    border-radius: 50%;
+}
+
+.activities__content {
+    display: flex;
+    justify-content: space-around;
+  
+}
+
+.card{
+    padding: 40px;
+    background-color: white;
+       border-radius: 10px;
+    text-align: center;
+    margin: 0 10px;
+    /* cố định kích thước chiều rộng  */
+}
+.card .card__title{
+     font-size: 20px;
+}
+.card__img{
+    border-radius: 10px;
+    width: unset;
+    
+}
+.card img{
+    width: 100%;
+}
+.card__title{
+    font-weight: 600;
+    font-size: 24px;
+}
+.card__btn{
+    padding: 8px 40px;
+    text-transform: capitalize;
+    border-radius: 9999px;
+    cursor: pointer;
+    border-color: transparent;
+}
+.view__all{
+    text-align: center;
+    margin-top: 20px;
+}
+.view__all button{
+    padding: 8px 40px;
+    border-radius: 9999px;
+    color:#e77053;
+    border: 1px solid currentColor;
+    background-color: transparent;
+    text-transform: capitalize;
+    display: inline-block;
+    text-align: center;
+}
+.btn-heart{
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border-radius: 8px;
+    color:#e77053
+}
+
+.card__buy{
+    margin-top: 20px;
+}
+.card__buy a i{
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    transition: all .5s;
+    color: #e77053;
+    
+}
+.card__buy a:hover button{
+    border-color: rgb(50, 23, 23);
+    color: #e77053;
+
+}
+.card__buy a:hover button{
+    cursor: pointer;
+    transition: all .3s linear;
+    
+}
+.card__buy .button__buy{
+    border-radius: 9999px;
+    padding: 13px 20px;
+    margin-left: 20px;
+
+
+}
+.cart{
+    font-size: 25px;
+}
+.card__buy .cart_cha{
+   display: inline-block;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    line-height: 60px;
+    background-color:gray ;
+    color: #f33607;
+}
+.card__price{
+    font-size: 20px;
+
+    color: #e77053;
+}
+b{
+    color: #e77053;
+}
+#search-bar {
+    padding: 20px;
+    text-align: center;
+    background-color: #f5f5f5;
+  }
+  
+  #search-bar .container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  #search-bar input {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  #search-bar button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #4caf50;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  #search-bar button:hover {
+    background-color: #45a049;
+  }
+  .card img{
+    width:60%;
+  }
+  .card__btn a{
+    text-decoration: none;
+  }
+  
+  .card__btn a:hover{
+    color:#e77053;
+  }

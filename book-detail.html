@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chi tiết sách</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+  <link rel="stylesheet" href="./css/detail.css">
+  <link rel="stylesheet" href="./css/book_detail.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <a class="logo" href="/">
+        <i class="fa-solid fa-book" style="color: orangered;"> BOOK ONLINE</i>
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <div class="book-detail-container">
+      <div class="book-detail-left">
+        <img id="book-image" src="" alt="Book Image">
+      </div>
+      <div class="book-detail-right">
+        <h1 id="book-title"></h1>
+        <p id="book-price"></p>
+        <p id="book-desc"></p>
+        <div class="buttons">
+          <button onclick="addToCartDetail()" class="add-to-cart-btn">Thêm vào giỏ hàng</button>
+          <a href="cart.html"><button class="view-cart-btn">Xem giỏ hàng</button></a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const title = params.get("title");
+    const price = params.get("price");
+    const image = params.get("image");
+    const desc = params.get("desc");
+
+    document.getElementById("book-title").textContent = title;
+    document.getElementById("book-price").textContent = `Giá: $${price}`;
+    document.getElementById("book-image").src = image;
+    document.getElementById("book-desc").textContent = desc;
+
+    function addToCartDetail() {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart.push({ title, price: parseInt(price), image });
+      localStorage.setItem('cart', JSON.stringify(cart));
+      alert(`Đã thêm "${title}" vào giỏ hàng!`);
+    }
+  </script>
+</body>
+</html>
